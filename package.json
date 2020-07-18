@@ -4,9 +4,9 @@
   "description": "Screenshot websites via URL",
   "license": "MIT",
   "dependencies": {
+    "chrome-aws-lambda": "2.0.2",
     "etag": "1.8.1",
-    "express": "^4.17.1",
-    "puppeteer": "5.1.0"
+    "puppeteer-core": "2.0.0"
   },
   "scripts": {
     "start": "node index"

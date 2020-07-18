@@ -1,0 +1,13 @@
+{
+  "name": "statically-screenshot",
+  "builds": [
+    { "src": "index.js", "use": "@now/node", "config": { "maxLambdaSize": "50mb" } }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "methods": ["GET", "HEAD"],
+      "dest": "/screenshot.js"
+    }
+  ]
+}

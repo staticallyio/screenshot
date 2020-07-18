@@ -1,8 +1,14 @@
-const puppeteer = require('puppeteer');
+const chrome = require('chrome-aws-lambda');
+const puppeteer = require('puppeteer-core');
 
 /* Set browser for desktop */
 async function getScreenshot(url, type, quality, fullPage) {
-    const browser = await puppeteer.launch({args: ['--no-sandbox', '--disable-setuid-sandbox']});
+    const browser = await puppeteer.launch({
+        args: chrome.args,
+        executablePath: await chrome.executablePath,
+        headless: chrome.headless,
+    });
+
     const page = await browser.newPage();
 
     await page.setExtraHTTPHeaders({
