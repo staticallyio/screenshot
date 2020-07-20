@@ -1,5 +1,3 @@
-# fly.toml file generated for statically-screenshot on 2020-07-17T14:58:59+07:00
-
 app = "statically-screenshot"
 
 
