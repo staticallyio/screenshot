@@ -13,5 +13,5 @@ app.disable('x-powered-by');
 app.get('/screenshot/mobile/*', getMobile);
 app.get('/*', getDesktop);
 
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 8080;
 app.listen(port, () => console.log(`I listen on http://localhost:${port}`));
