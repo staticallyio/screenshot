@@ -10,7 +10,7 @@ async function getScreenshot(url, type, quality, fullPage) {
     });
 
     await page.emulate({
-        'userAgent': 'Mozilla/5.0 (Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.79 Safari/537.36 (compatible; Statically-Screenshot; +https://statically.io/screenshot/)',
+        'userAgent': 'Mozilla/5.0 (Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.125 Safari/537.36 (compatible; Statically-Screenshot; +https://statically.io/screenshot/)',
         'viewport': {
           'width': 1280,
           'height': 960,
@@ -39,7 +39,7 @@ async function getScreenshotMobile(url, type, quality, fullPage) {
     });
 
     await page.emulate({
-        'userAgent': 'Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.79 Mobile Safari/537.36 (compatible; Statically-Screenshot; +https://statically.io/screenshot/)',
+        'userAgent': 'Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.125 Mobile Safari/537.36 (compatible; Statically-Screenshot; +https://statically.io/screenshot/)',
         'viewport': {
           'width': 360,
           'height': 640,
