@@ -12,24 +12,23 @@ async function getDesktop(req, res) {
         const url = getUrlFromPath(pathname);
         const qual = getInt(quality);
         if (!isValidUrl(url)) {
-            res.statusCode = 400;
-            res.setHeader('Content-Type', 'text/html');
-            res.setHeader('Cache-Control', 'no-cache, no-store, must-revalidate');
-            res.sendFile(config.publicDir + '/errors/400.html');
+            res.statusCode = 200;
+            res.setHeader('Content-Type', 'image/png');
+            res.setHeader('Cache-Control', 'public, max-age=5');
+            res.sendFile(config.publicDir + '/error-400.png');
         } else {
             const file = await getScreenshot(url, type, qual, fullPage);
             res.statusCode = 200;
             res.setHeader('Content-Type', `image/${type}`);
             res.setHeader('Cache-Control', 'public, max-age=2678400, immutable'); // 1 month CDN cache to save resources
             res.setHeader('ETag', etag(file));
-            res.setHeader('Vary', 'Accept-Encoding');
             res.end(file);
         }
     } catch (e) {
-        res.statusCode = 500;
-        res.setHeader('Content-Type', 'text/html');
-        res.setHeader('Cache-Control', 'no-cache, no-store, must-revalidate');
-        res.sendFile(config.publicDir + '/errors/500.html');
+        res.statusCode = 200;
+        res.setHeader('Content-Type', 'image/png');
+        res.setHeader('Cache-Control', 'public, max-age=5');
+        res.sendFile(config.publicDir + '/error-500.png');
         console.error(e.message);
     }
 }
@@ -42,24 +41,23 @@ async function getMobile(req, res) {
         const url = getUrlFromPathMobile(pathname);
         const qual = getInt(quality);
         if (!isValidUrl(url)) {
-            res.statusCode = 400;
-            res.setHeader('Content-Type', 'text/html');
-            res.setHeader('Cache-Control', 'no-cache, no-store, must-revalidate');
-            res.sendFile(config.publicDir + '/errors/400.html');
+            res.statusCode = 200;
+            res.setHeader('Content-Type', 'image/png');
+            res.setHeader('Cache-Control', 'public, max-age=5');
+            res.sendFile(config.publicDir + '/error-400.png');
         } else {
             const file = await getScreenshotMobile(url, type, qual, fullPage);
             res.statusCode = 200;
             res.setHeader('Content-Type', `image/${type}`);
             res.setHeader('Cache-Control', 'public, max-age=2678400, immutable'); // 1 month CDN cache to save resources
             res.setHeader('ETag', etag(file));
-            res.setHeader('Vary', 'Accept-Encoding');
             res.end(file);
         }
     } catch (e) {
-        res.statusCode = 500;
-        res.setHeader('Content-Type', 'text/html');
-        res.setHeader('Cache-Control', 'no-cache, no-store, must-revalidate');
-        res.sendFile(config.publicDir + '/errors/500.html');
+        res.statusCode = 200;
+        res.setHeader('Content-Type', 'image/png');
+        res.setHeader('Cache-Control', 'public, max-age=5');
+        res.sendFile(config.publicDir + '/error-500.png');
         console.error(e.message);
     }
 }
