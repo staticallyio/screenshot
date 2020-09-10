@@ -5,10 +5,10 @@ async function getScreenshot(url, type, quality, fullPage) {
     const browser = await puppeteer.launch({args: ['--no-sandbox', '--disable-setuid-sandbox']});
     const page = await browser.newPage();
 
+    await page.setDefaultTimeout(10000);
     await page.setExtraHTTPHeaders({
         referer: 'https://statically.io/screenshot/'
     });
-
     await page.emulate({
         'userAgent': 'Mozilla/5.0 (Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.125 Safari/537.36 (compatible; Statically-Screenshot; +https://statically.io/screenshot/)',
         'viewport': {
@@ -34,10 +34,10 @@ async function getScreenshotMobile(url, type, quality, fullPage) {
     const browser = await puppeteer.launch({args: ['--no-sandbox', '--disable-setuid-sandbox']});
     const page = await browser.newPage();
 
+    await page.setDefaultTimeout(10000);
     await page.setExtraHTTPHeaders({
         referer: 'https://statically.io/screenshot/'
     });
-
     await page.emulate({
         'userAgent': 'Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.125 Mobile Safari/537.36 (compatible; Statically-Screenshot; +https://statically.io/screenshot/)',
         'viewport': {
