@@ -4,5 +4,5 @@ WORKDIR /usr/src/app
 COPY . .
 
 RUN npm install --only=production
-EXPOSE 5050
+EXPOSE 5000
 CMD [ "npm", "start" ]
