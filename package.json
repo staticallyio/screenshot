@@ -1,12 +1,12 @@
 {
-  "name": "statically-screenshot",
+  "name": "screenshot",
   "version": "1.0.0",
   "description": "Screenshot websites via URL",
   "license": "MIT",
   "dependencies": {
     "etag": "1.8.1",
     "express": "^4.17.1",
-    "puppeteer": "5.1.0"
+    "puppeteer-core": "5.1.0"
   },
   "scripts": {
     "start": "node index"
