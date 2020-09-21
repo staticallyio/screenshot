@@ -11,6 +11,7 @@
 <p align="center">
   <a href="https://statically.io">statically.io</a> |
   <a href="https://twitter.com/staticallyio">Twitter</a> |
+  <a href="https://statically.discourse.group">Community</a> |
   <a href="https://www.patreon.com/fransallen">Become A Backer</a>
   <br /><br />
 	<a href="https://hub.docker.com/r/statically/screenshot">
