@@ -1,7 +1,7 @@
 {
   "name": "screenshot",
   "version": "1.0.0",
-  "description": "Screenshot websites via URL",
+  "description": "Automagically converts URLs into images and PDFs.",
   "license": "MIT",
   "dependencies": {
     "etag": "1.8.1",
