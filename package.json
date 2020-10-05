@@ -2,6 +2,9 @@
   "name": "screenshot",
   "version": "1.0.0",
   "description": "Automagically converts URLs into images and PDFs.",
+  "author": "Frans Allen",
+  "main": "index.js",
+  "private": true,
   "license": "MIT",
   "dependencies": {
     "etag": "1.8.1",
@@ -9,6 +12,7 @@
     "puppeteer-core": "5.1.0"
   },
   "scripts": {
+    "develop": "nodemon",
     "start": "node index"
   },
   "engines": {
