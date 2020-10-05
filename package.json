@@ -11,8 +11,12 @@
     "express": "^4.17.1",
     "puppeteer-core": "5.1.0"
   },
+  "devDependencies": {
+    "prettier": "^1.18.2"
+  },
   "scripts": {
     "develop": "nodemon",
+    "fix:prettier": "prettier --write '**/*.{js,json,css}'",
     "start": "node index"
   },
   "engines": {
