@@ -18,8 +18,5 @@
     "develop": "nodemon",
     "fix:prettier": "prettier --write '**/*.{js,json,css}'",
     "start": "node index"
-  },
-  "engines": {
-    "node": "12.x"
   }
 }
