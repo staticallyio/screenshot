@@ -1,6 +1,8 @@
 const puppeteer = require('puppeteer-core');
 const config = require('./config');
 
+const disableTransitionDelayCSS = `*,::after,::before{transition-delay:0s!important;transition-duration:0s!important;animation-delay:-.1ms!important;animation-duration:0s!important;animation-play-state:paused!important;caret-color:transparent!important;color-adjust:exact!important}`;
+
 /* Set browser for desktop */
 async function getScreenshot(url, type, quality, fullPage) {
   const browser = await puppeteer.connect({
@@ -25,6 +27,8 @@ async function getScreenshot(url, type, quality, fullPage) {
   });
 
   await page.goto(url /*{ waitUntil: 'networkidle0' }*/);
+  await page.addStyleTag({ content: disableTransitionDelayCSS });
+
   const file = await page.screenshot({ type, quality, fullPage });
   await browser.close();
   console.log('HTTP ' + url);
@@ -55,6 +59,8 @@ async function getScreenshotMobile(url, type, quality, fullPage) {
   });
 
   await page.goto(url /*{ waitUntil: 'networkidle0' }*/);
+  await page.addStyleTag({ content: disableTransitionDelayCSS });
+  
   console.log('HTTP ' + url);
   const file = await page.screenshot({ type, quality, fullPage });
   await browser.close();
