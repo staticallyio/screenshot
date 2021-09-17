@@ -1,15 +1,12 @@
 {
   "name": "screenshot",
-  "version": "1.0.0",
-  "description": "Automagically converts URLs into images and PDFs.",
-  "author": "Frans Allen",
-  "main": "index.js",
+  "description": "A simple screenshot API.",
   "private": true,
-  "license": "MIT",
   "dependencies": {
+    "chrome-aws-lambda": "^10.1.0",
     "etag": "1.8.1",
     "express": "^4.17.1",
-    "puppeteer-core": "5.1.0"
+    "puppeteer-core": "10.1.0"
   },
   "devDependencies": {
     "prettier": "^1.18.2"
