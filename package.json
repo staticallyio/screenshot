@@ -12,7 +12,7 @@
     "prettier": "1.18.2"
   },
   "scripts": {
-    "develop": "nodemon",
+    "dev": "vercel dev",
     "format": "prettier --write '**/*.{js,json,css}'",
     "start": "node index"
   }
