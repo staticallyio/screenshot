@@ -8,7 +8,7 @@
     "puppeteer-core": "10.1.0"
   },
   "devDependencies": {
-    "prettier": "^1.18.2"
+    "prettier": "1.18.2"
   },
   "scripts": {
     "develop": "nodemon",
