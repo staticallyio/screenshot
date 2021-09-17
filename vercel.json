@@ -1,9 +1,10 @@
 {
-  "regions": ["sin1"],
   "builds": [
-    { "src": "index.js", "use": "@now/node", "config": { "maxLambdaSize": "50mb" } }
+    {
+      "src": "screenshot.js",
+      "use": "@now/node",
+      "config": { "maxLambdaSize": "50mb" }
+    }
   ],
-  "routes": [
-    { "src": "/(.*)", "dest": "/index.js" }
-  ]
+  "routes": [{ "src": "/(.*)", "dest": "/screenshot.js" }]
 }
