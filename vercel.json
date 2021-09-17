@@ -2,7 +2,7 @@
   "builds": [
     {
       "src": "screenshot.js",
-      "use": "@now/node",
+      "use": "@vercel/node",
       "config": { "maxLambdaSize": "50mb" }
     }
   ],
