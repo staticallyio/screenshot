@@ -1,12 +1,14 @@
+const chrome = require('chrome-aws-lambda');
 const puppeteer = require('puppeteer-core');
-const config = require('./config');
 
 const disableTransitionDelayCSS = `*,::after,::before{transition-delay:0s!important;transition-duration:0s!important;animation-delay:-.1ms!important;animation-duration:0s!important;animation-play-state:paused!important;caret-color:transparent!important;color-adjust:exact!important}`;
 
 /* Set browser for desktop */
 async function getScreenshot(url, type, quality, fullPage) {
-  const browser = await puppeteer.connect({
-    browserWSEndpoint: config.browserWSEndpoint,
+  const browser = await puppeteer.launch({
+    args: chrome.args,
+    executablePath: await chrome.executablePath,
+    headless: chrome.headless,
   });
   const page = await browser.newPage();
 
@@ -37,8 +39,10 @@ async function getScreenshot(url, type, quality, fullPage) {
 
 /* Set browser for mobile */
 async function getScreenshotMobile(url, type, quality, fullPage) {
-  const browser = await puppeteer.connect({
-    browserWSEndpoint: config.browserWSEndpoint,
+  const browser = await puppeteer.launch({
+    args: chrome.args,
+    executablePath: await chrome.executablePath,
+    headless: chrome.headless,
   });
   const page = await browser.newPage();
 
@@ -69,8 +73,10 @@ async function getScreenshotMobile(url, type, quality, fullPage) {
 
 /* Set browser for PDF */
 async function generatePdf(url) {
-  const browser = await puppeteer.connect({
-    browserWSEndpoint: config.browserWSEndpoint,
+  const browser = await puppeteer.launch({
+    args: chrome.args,
+    executablePath: await chrome.executablePath,
+    headless: chrome.headless,
   });
   const page = await browser.newPage();
 
