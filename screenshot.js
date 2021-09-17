@@ -15,7 +15,7 @@ async function getDesktop(req, res) {
     const { type = 'png', quality, fullPage } = query;
     const base = '/screenshot/';
     const target = pathname.replace(base, '');
-    const url = 'http://' + target;
+    const url = 'https://' + target;
     const qual = getInt(quality);
     if (!isValidUrl(url)) {
       res.statusCode = 200;
@@ -48,7 +48,7 @@ async function getMobile(req, res) {
     const { type = 'png', quality, fullPage } = query;
     const base = '/screenshot/mobile/';
     const target = pathname.replace(base, '');
-    const url = 'http://' + target;
+    const url = 'https://' + target;
     const qual = getInt(quality);
     if (!isValidUrl(url)) {
       res.statusCode = 200;
@@ -79,7 +79,7 @@ async function getPdf(req, res) {
   try {
     const base = '/screenshot/pdf/';
     const target = req.url.replace(base, '');
-    const url = 'http://' + target;
+    const url = 'https://' + target;
     if (!isValidUrl(url)) {
       res.statusCode = 200;
       res.setHeader('Content-Type', 'image/png');
