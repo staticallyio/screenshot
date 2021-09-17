@@ -3,9 +3,8 @@
   "description": "A simple screenshot API.",
   "private": true,
   "dependencies": {
-    "chrome-aws-lambda": "^10.1.0",
+    "chrome-aws-lambda": "10.1.0",
     "etag": "1.8.1",
-    "express": "^4.17.1",
     "puppeteer-core": "10.1.0"
   },
   "devDependencies": {
@@ -13,7 +12,7 @@
   },
   "scripts": {
     "develop": "nodemon",
-    "fix:prettier": "prettier --write '**/*.{js,json,css}'",
+    "format": "prettier --write '**/*.{js,json,css}'",
     "start": "node index"
   }
 }
