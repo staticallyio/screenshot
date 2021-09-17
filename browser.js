@@ -60,7 +60,7 @@ async function getScreenshotMobile(url, type, quality, fullPage) {
 
   await page.goto(url /*{ waitUntil: 'networkidle0' }*/);
   await page.addStyleTag({ content: disableTransitionDelayCSS });
-  
+
   console.log('HTTP ' + url);
   const file = await page.screenshot({ type, quality, fullPage });
   await browser.close();
