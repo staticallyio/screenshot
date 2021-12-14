@@ -4,7 +4,7 @@ const config = require('./config');
 const disableTransitionDelayCSS = `*,::after,::before{transition-delay:0s!important;transition-duration:0s!important;animation-delay:-.1ms!important;animation-duration:0s!important;animation-play-state:paused!important;caret-color:transparent!important;color-adjust:exact!important}`;
 
 /* Set browser for desktop */
-async function getScreenshot(url, type, quality, fullPage) {
+async function getScreenshot(url, type, quality, fullPage, waitFor) {
   const browser = await puppeteer.connect({
     browserWSEndpoint: config.browserWSEndpoint,
   });
@@ -25,7 +25,7 @@ async function getScreenshot(url, type, quality, fullPage) {
 
   await page.goto(url /*{ waitUntil: 'networkidle0' }*/);
   await page.addStyleTag({ content: disableTransitionDelayCSS });
-
+  await new Promise(r => setTimeout(r, waitFor * 1000));
   const file = await page.screenshot({ type, quality, fullPage });
   await browser.close();
   console.log('HTTP ' + url);
