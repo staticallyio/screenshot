@@ -82,3 +82,7 @@ The application avalaible through `/screenshot/` path.
 - Visit http://localhost:5000/screenshot/pdf/news.ycombinator.com for PDF.
 
 ![Screenshot PDF](https://cdn.statically.io/gh/staticallyio/screenshot/master/public/screenshot-pdf.png)
+
+### Options
+
+- In order to wait before taking the screenshot you can use the waitFor query parameter and specify an integer number of seconds.

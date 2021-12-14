@@ -12,7 +12,7 @@ const { getInt, isValidUrl } = require('./validator');
 async function getDesktop(req, res) {
   try {
     const { pathname = '/', query = {} } = parse(req.url, true);
-    const { type = 'png', quality, fullPage } = query;
+    const { type = 'png', quality, fullPage, waitFor = '0' } = query;
     const base = '/screenshot/';
     const target = pathname.replace(base, '');
     const url = 'https://' + target;
@@ -23,7 +23,7 @@ async function getDesktop(req, res) {
       res.setHeader('Cache-Control', 'public, max-age=5');
       res.sendFile(config.publicDir + '/error-400.png');
     } else {
-      const file = await getScreenshot(url, type, qual, fullPage);
+      const file = await getScreenshot(url, type, qual, fullPage, getInt(waitFor));
       const filename = 'statically_' + target + `.${type}`;
       res.statusCode = 200;
       res.setHeader('Content-Disposition', `filename="` + filename + `"`);
